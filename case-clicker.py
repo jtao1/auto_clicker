@@ -20,8 +20,8 @@ driver.maximize_window()
 
 buttons = {
     'vault' : '//*[@id="__next"]/div/main/div[2]/div[4]',
-    'money_autoclick_button' : '//*[@id="__next"]/div/main/div[2]/div[2]/div/div/div/div/div[1]/div[2]/div/span[1]/button', #doesnt work
-    'case_autoclick_button' : '//*[@id="__next"]/div/main/div[2]/div[3]/div/div/div/div/div[1]/div[2]/div/span[1]/button', #doesnt work
+    'money_autoclick_button' : '//*[@id="__next"]/div/main/div[2]/div[2]/div/div/div/div/div[3]/div/span[1]',
+    'case_autoclick_button' : '//*[@id="__next"]/div/main/div[2]/div[3]/div/div/div/div/div[3]/div/span[1]',
     'money' : '//*[@id="__next"]/div/main/div[2]/div[2]/div/div',
     'case' : '//*[@id="__next"]/div/main/div[2]/div[3]/div/div',
     'cookies' : '//*[@id="CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll"]',
@@ -54,6 +54,7 @@ def login(login_type):
     click(buttons[login_type])
 
 def looper():
+    click(buttons['case_autoclick_button'])
     counter = 0
     sleep_constant = 0.08
     pause_amt = int((60 + random.uniform(0, 30)))
